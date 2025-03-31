@@ -1,0 +1,8 @@
+<?php
+$array = [1, 1, 2, 3, 4, -51, 12, 12, 12, -51];
+
+$count = array_reduce(range(1, count($array) - 1), function ($carry, $i) use ($array) {
+    return $carry + ($array[$i] === $array[$i - 1]);
+}, 0);
+
+echo  $count . "\n";
